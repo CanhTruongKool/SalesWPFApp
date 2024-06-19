@@ -1,0 +1,40 @@
+﻿<Window x:Class="SalesWPFApp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SalesWPFApp"
+        WindowStartupLocation="CenterScreen"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="500" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="12*"/>
+        </Grid.RowDefinitions>
+        <TabControl SelectionChanged="TabControl_SelectionChanged">
+            <TabItem Header="Members Management" x:Name="MembersTab">
+                <Grid Background="#FFE5E5E5"/>
+            </TabItem>
+            <TabItem Header="Product Management" x:Name="ProductsTab">
+                <Grid Background="#FFE5E5E5"/>
+            </TabItem>
+            <TabItem Header="Order Management" x:Name="OrdersTab">
+                <Grid Background="#FFE5E5E5"/>
+            </TabItem>
+            <TabItem Header="Report" x:Name="ReportTab">
+                <Grid Background="#FFE5E5E5"/>
+            </TabItem>
+        </TabControl>
+        <TextBlock  x:Name="txtHello"
+         Margin="0,5,100,0"
+         Grid.Column="1" Grid.Row="0" HorizontalAlignment="Right"
+         VerticalAlignment="Top" > Hello ADMIN</TextBlock>
+
+        <Button Grid.Row="0" Width="50" Height="30"
+                HorizontalAlignment="Left"
+                Margin="730,4,0,0" VerticalAlignment="Top" Click="Button_Click"
+        >Log out</Button>
+        <ContentControl x:Name="MainContentControl" Grid.Row="1"/>
+    </Grid>
+</Window>

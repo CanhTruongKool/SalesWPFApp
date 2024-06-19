@@ -1,0 +1,64 @@
+﻿<Window x:Class="SalesWPFApp.LoginWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SalesWPFApp"
+        mc:Ignorable="d"
+        WindowStartupLocation="CenterScreen"
+        Title="LoginWindow" Height="450" Width="850" MaxHeight="450" MaxWidth="850">
+
+    <Window.Resources>
+        <DropShadowEffect x:Key="ShadowEffect" Color="Black" Direction="320" ShadowDepth="5" BlurRadius="10" Opacity="0.3"/>
+    </Window.Resources>
+
+    <Grid Background="LightBlue">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="3*"/>
+        </Grid.ColumnDefinitions>
+
+        <!-- Title Label -->
+        <Label Content="FSTORE" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2"
+               HorizontalAlignment="Center" VerticalAlignment="Top"
+               FontSize="36" FontFamily="Segoe UI" Foreground="#FF1A237E"
+               Margin="0,20,0,20"/>
+
+        <!-- Email Label -->
+        <Label Content="Email" Grid.Row="1" Grid.Column="0" HorizontalAlignment="Right"
+               VerticalAlignment="Center" FontSize="18" FontFamily="Segoe UI"
+               Foreground="#FF1A237E" Margin="10"/>
+
+        <!-- Email TextBox -->
+        <Border Grid.Row="1" Grid.Column="1" Background="White" CornerRadius="10" Margin="10"
+                Effect="{DynamicResource ShadowEffect}">
+            <TextBox x:Name="Email" FontSize="18" BorderThickness="0" Padding="10"/>
+        </Border>
+
+        <!-- Password Label -->
+        <Label Content="Password" Grid.Row="2" Grid.Column="0" HorizontalAlignment="Right"
+               VerticalAlignment="Center" FontSize="18" FontFamily="Segoe UI"
+               Foreground="#FF1A237E" Margin="10"/>
+
+        <!-- PasswordBox -->
+        <Border Grid.Row="2" Grid.Column="1" Background="White" CornerRadius="10" Margin="10"
+                Effect="{DynamicResource ShadowEffect}">
+            <PasswordBox x:Name="Password" FontSize="18" BorderThickness="0" Padding="10"/>
+        </Border>
+
+        <!-- Login Button -->
+        <Border Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" Background="LawnGreen"
+                CornerRadius="10" Margin="10" Width="150" Height="50"
+                HorizontalAlignment="Center" VerticalAlignment="Top"
+                Effect="{DynamicResource ShadowEffect}">
+            <Button Content="Login" FontSize="18" FontFamily="Segoe UI" Foreground="White" 
+                    Background="Transparent" BorderThickness="0" Click="Button_Click"/>
+        </Border>
+    </Grid>
+</Window>
